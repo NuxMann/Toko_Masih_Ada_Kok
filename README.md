@@ -1,35 +1,27 @@
 # 🛒 Toko Masih Ada Kok
 
-Aplikasi web **Toko Online / Toko Kelontong** berbasis **CodeIgniter 3** dan **MySQL** yang dirancang untuk menampilkan katalog produk per kategori, detail produk, keranjang belanja, serta alur checkout/pembayaran di lingkungan pengembangan lokal.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=700&size=24&duration=2600&pause=900&color=2563EB&center=true&vCenter=true&width=640&lines=Toko+Masih+Ada+Kok+%F0%9F%9B%92;Katalog+%E2%80%A2+Kategori+%E2%80%A2+Keranjang+%E2%80%A2+Checkout;CodeIgniter+3+%2B+MySQL+(Laragon)" alt="Toko Masih Ada Kok Animated Banner" />
+</p>
 
-> **Catatan Status Pembayaran:** Integrasi **Midtrans Payment Gateway asli belum diaktifkan/dihubungkan** pada proyek ini (alur pembayaran masih berupa alur/simulasi lokal dan memerlukan konfigurasi kredensial *Server Key* & *Client Key* Midtrans sebelum digunakan secara penuh).
+<p align="center">
+  <img src="https://img.shields.io/badge/Framework-CodeIgniter%203-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white" alt="CodeIgniter 3" />
+  <img src="https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.1+" />
+  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Midtrans%20Gateway-Belum%20Aktif-F59E0B?style=for-the-badge" alt="Midtrans Belum Aktif" />
+</p>
 
----
+Aplikasi web **Toko Online / Toko Kelontong** berbasis **CodeIgniter 3** dan **MySQL** untuk menampilkan daftar produk per kategori, halaman detail produk, pengelolaan keranjang belanja, serta alur checkout/pembayaran di lingkungan lokal.
 
-## ✨ Fitur Utama
-
-* **Branding & Identitas Toko:** Menggunakan nama **Toko Masih Ada Kok** pada judul halaman, navigasi, dan identitas antarmuka.
-* **Navigasi & Grid Kategori:** Penelusuran produk berdasarkan kategori (seperti *Elektronik*, *Pakaian Pria*, *Pakaian Wanita*, *Pakaian Anak*, dan *Peralatan Olahraga*) baik dari menu maupun grid kategori.
-* **Detail Produk & Keranjang Belanja:** Melihat informasi produk, menambah item ke keranjang, menghitung subtotal & total belanja, serta navigasi kembali atau lanjutkan belanja.
-* **Alur Checkout & Pembayaran:** Proses checkout pesanan dengan struktur yang disiapkan untuk pengembangan integrasi *payment gateway*.
-
----
-
-## 🛠️ Stack & Lingkungan Pengembangan
-
-* **Framework:** CodeIgniter 3
-* **Bahasa:** PHP 8.1+ (diuji menggunakan PHP 8.1.10 di Laragon)
-* **Database:** MySQL / MariaDB (`Database_MySQL/db_toko_online.sql`)
-* **Web Server Lokal:** Laragon (Apache / MySQL) atau PHP Built-in Server
+> **Catatan Status Pembayaran:** Integrasi **Midtrans Payment Gateway asli belum diaktifkan/dihubungkan** pada proyek ini (alur pembayaran masih berjalan sebagai alur/simulasi lokal dan memerlukan konfigurasi *Server Key*, *Client Key*, serta endpoint callback Midtrans sebelum dipakai secara penuh).
 
 ---
 
-## 📁 Struktur Folder Utama
+## 📊 Grafis Alur Aplikasi & Arsitektur
 
-```text
-toko_kelontong/
-├── application/        # Controllers, Models, Views, dan Config CodeIgniter 3
-├── Database_MySQL/     # Berisi file SQL (db_toko_online.sql)
-├── img/                # Aset gambar antarmuka/banner
-├── uploads/            # File gambar produk yang diunggah/digunakan katalog
-└── index.php           # Entry point aplikasi
+```mermaid
+flowchart LR
+    A[("🌐 Browser<br/>localhost:8080")] -->|HTTP Request| B["⚙️ CodeIgniter 3<br/>Controllers & Views"]
+    B -->|Query / CRUD| C[("🗄️ MySQL<br/>db_toko_online")]
+    B -->|Load Assets| D["🖼️ Folder uploads/ & img/"]
+    B -.->|Belum Terhubung| E["💳 Midtrans Gateway<br/>(Belum Diaktifkan)"]
