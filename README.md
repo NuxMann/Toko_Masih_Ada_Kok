@@ -21,29 +21,7 @@ Aplikasi web **Toko Online / Toko Kelontong** berbasis **CodeIgniter 3** dan **M
 
 ```mermaid
 flowchart LR
-    A[("🌐 Browser<br/>localhost:8080")] -->|HTTP Request| B["⚙️ CodeIgniter 3<br/>Controllers & Views"]
-    B -->|Query / CRUD| C[("🗄️ MySQL<br/>db_toko_online")]
-    B -->|Load Assets| D["🖼️ Folder uploads/ & img/"]
-    B -.->|Belum Terhubung| E["💳 Midtrans Gateway<br/>(Belum Diaktifkan)"]
-
-sequenceDiagram
-    actor User as 👤 Pengguna
-    participant Web as 🖥️ Toko Masih Ada Kok (CI3)
-    participant DB as 🗄️ MySQL
-
-    User->>Web: Buka Dashboard & Pilih Kategori
-    Web->>DB: Ambil data kategori & produk
-    DB-->>Web: Kirim data produk + nama file gambar
-    Web-->>User: Tampilkan grid kategori & card produk
-    User->>Web: Buka Detail -> Tambah ke Keranjang
-    Web-->>User: Perbarui jumlah item & subtotal keranjang
-    User->>Web: Klik Pembayaran / Checkout
-    Web-->>User: Tampilkan halaman pembayaran lokal (Midtrans asli belum aktif)
-
-git clone [https://github.com/NuxMann/Toko_Masih_Ada_Kok.git](https://github.com/NuxMann/Toko_Masih_Ada_Kok.git)
-cd Toko_Masih_Ada_Kok
-
-flowchart TD
-    S1["1. Jalankan MySQL di Laragon<br/>(Port 3306)"] --> S2["2. Import Database_MySQL/db_toko_online.sql<br/>via phpMyAdmin atau MySQL CLI"]
-    S2 --> S3["3. Atur Koneksi di<br/>application/config/database.php"]
-    S3 --> S4["4. Verifikasi Data Dummy &<br/>Gambar di Folder uploads/"]
+    A["Browser (localhost:8080)"] -->|HTTP Request| B["CodeIgniter 3 (Controllers & Views)"]
+    B -->|Query / CRUD| C["MySQL (db_toko_online)"]
+    B -->|Load Assets| D["Folder uploads/ & img/"]
+    B -.->|Belum Terhubung| E["Midtrans Gateway (Belum Diaktifkan)"]
