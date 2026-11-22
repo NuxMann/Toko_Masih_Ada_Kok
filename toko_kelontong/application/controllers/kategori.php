@@ -1,49 +1,48 @@
 <?php
 
     class Kategori extends CI_Controller{
-        public function elektronik()
+        private function render_kategori($method, $label)
         {
-            $data['elektronik'] = $this->model_kategori->data_elektronik()->result();
+            $data['judul_kategori'] = $label;
+            $data['produk'] = $this->model_kategori->$method()->result();
+            foreach ($data['produk'] as &$produk) {
+                $filename = trim((string) $produk->gambar);
+                $diskPath = FCPATH.'uploads'.DIRECTORY_SEPARATOR.$filename;
+                if ($filename === '' || !is_file($diskPath)) {
+                    $filename = '0.jpg';
+                }
+                $produk->image_url = base_url('uploads/'.rawurlencode($filename));
+            }
+            unset($produk);
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar');
-            $this->load->view('elektronik', $data);
+            $this->load->view('templates/product_grid', $data);
             $this->load->view('templates/footer');
+        }
+
+        public function elektronik()
+        {
+            $this->render_kategori('data_elektronik', 'Elektronik');
         }
 
         public function pakaian_pria()
         {
-            $data['pakaian_pria'] = $this->model_kategori->data_pakaian_pria()->result();
-            $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
-            $this->load->view('pakaian_pria', $data);
-            $this->load->view('templates/footer');
+            $this->render_kategori('data_pakaian_pria', 'Pakaian Pria');
         }
 
         public function pakaian_wanita()
         {
-            $data['pakaian_wanita'] = $this->model_kategori->data_pakaian_wanita()->result();
-            $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
-            $this->load->view('pakaian_wanita', $data);
-            $this->load->view('templates/footer');
+            $this->render_kategori('data_pakaian_wanita', 'Pakaian Wanita');
         }
 
         public function pakaian_anak()
         {
-            $data['pakaian_anak'] = $this->model_kategori->data_pakaian_anak()->result();
-            $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
-            $this->load->view('pakaian_anak', $data);
-            $this->load->view('templates/footer');
+            $this->render_kategori('data_pakaian_anak', 'Pakaian Anak');
         }
 
         public function peralatan_olahraga()
         {
-            $data['peralatan_olahraga'] = $this->model_kategori->data_peralatan_olahraga()->result();
-            $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
-            $this->load->view('peralatan_olahraga', $data);
-            $this->load->view('templates/footer');
+            $this->render_kategori('data_peralatan_olahraga', 'Peralatan Olahraga');
         }
     }
 

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="180" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+  <title id="title">Toko Masih Ada Kok</title><desc id="desc">Logo keranjang belanja hangat dan terpercaya</desc>
+  <rect width="640" height="180" rx="28" fill="#fff"/>
+  <g transform="translate(20 16)">
+    <circle cx="74" cy="74" r="68" fill="#fff1e8"/>
+    <path d="M42 57h72l-8 48H52z" fill="#f47b35" stroke="#b84b1e" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M51 58 65 35h28l15 23" fill="none" stroke="#176b65" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M61 70v25m22-25v25" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="61" cy="119" r="7" fill="#176b65"/><circle cx="101" cy="119" r="7" fill="#176b65"/>
+    <path d="m119 39 5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="#f6c453"/>
+  </g>
+  <text x="178" y="83" font-family="Arial, sans-serif" font-size="39" font-weight="700" fill="#145b56">Toko Masih</text>
+  <text x="178" y="132" font-family="Arial, sans-serif" font-size="39" font-weight="700" fill="#e96c2c">Ada Kok</text>
+</svg>

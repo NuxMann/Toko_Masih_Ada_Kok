@@ -50,5 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+$route['dashboard/index'] = 'welcome/index';
+$route['dashboard/checkout'] = 'dashboard/pembayaran';
+$route['dashboard/payment/(:num)'] = 'dashboard/status_pembayaran/$1';
+$route['dashboard/status_pembayaran/(:num)'] = 'dashboard/status_pembayaran/$1';
+$route['midtrans/notification'] = 'dashboard/notifikasi_midtrans';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

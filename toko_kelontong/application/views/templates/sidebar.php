@@ -1,5 +1,3 @@
-<body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -7,11 +5,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon">
-                <i class="fas fa-store"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">TOKO ONLINE</div>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url(); ?>">
+                <img class="sidebar-brand-mark" src="<?php echo base_url('assets/img/logo-toko-masih-ada-kok.svg'); ?>" alt="Logo Toko Masih Ada Kok">
+                <div class="sidebar-brand-text mx-2">Toko Masih Ada Kok</div>
             </a>
 
             <!-- Divider -->
@@ -19,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('dashboard') ?>"">
+                <a class="nav-link" href="<?php echo base_url('welcome') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -34,7 +30,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/elektronik') ?>"">
+                <a class="nav-link" href="<?php echo base_url('kategori/elektronik') ?>">
                     <i class="fas fa-fw fa-tv"></i>
                     <span>Elektronik</span></a>
             </li>
@@ -46,19 +42,19 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/pakaian_wanita') ?>"">
+                <a class="nav-link" href="<?php echo base_url('kategori/pakaian_wanita') ?>">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Pakaian Wanita</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/pakaian_anak') ?>"">
+                <a class="nav-link" href="<?php echo base_url('kategori/pakaian_anak') ?>">
                     <i class="fas fa-fw fa-tshirt"></i>
                     <span>Pakaian Anak</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('kategori/peralatan_olahraga') ?>"">
+                <a class="nav-link" href="<?php echo base_url('kategori/peralatan_olahraga') ?>">
                     <i class="fas fa-fw fa-futbol"></i>
                     <span>Peralatan Olahraga</span></a>
             </li>
@@ -73,7 +69,7 @@
 
             <!-- Sidebar Message -->
               <!--  <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                <img class="sidebar-card-illustration mb-2" src="<?php echo base_url('application/views/templates/undraw_profile.svg'); ?>" alt="Ilustrasi toko">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div> -->

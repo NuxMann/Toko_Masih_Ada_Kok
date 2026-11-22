@@ -7,11 +7,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon">
-                <i class="fas fa-store"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">ADMIN</div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo site_url('admin/dashboard_admin'); ?>">
+                <img class="sidebar-brand-mark" src="<?php echo base_url('assets/img/logo-toko-masih-ada-kok.svg'); ?>" alt="Logo Toko Masih Ada Kok">
+                <div class="sidebar-brand-text mx-2">Toko Masih Ada Kok</div>
             </a>
 
             <!-- Divider -->

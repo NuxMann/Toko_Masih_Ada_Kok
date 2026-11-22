@@ -1,6 +1,12 @@
 <div class="container-fluid">
     <h4>Keranjang Belanja</h4>
 
+    <?php if ($this->session->flashdata('pesan')): ?><div class="alert alert-warning"><?php echo $this->session->flashdata('pesan'); ?></div><?php endif; ?>
+
+    <?php if (!$this->cart->contents()): ?>
+        <div class="alert alert-info">Keranjang Anda masih kosong.</div>
+    <?php else: ?>
+
     <table class="table table-bordered table-striped table-hover  text-center">
 
             <tr>
@@ -36,12 +42,13 @@
                     <a href="<?php echo base_url('dashboard/hapus_keranjang') ?>">
                         <div class="btn btn-sm btn-danger">Hapus Keranjang</div> 
                     </a>
-                    <a href="<?php echo base_url('dashboard/index') ?>">
+                    <a href="<?php echo site_url('welcome') ?>">
                         <div class="btn btn-sm btn-primary">Lanjutkan Belanja</div> 
                     </a>
-                    <a href="<?php echo base_url('dashboard/pembayaran') ?>">
+                    <a href="<?php echo site_url('dashboard/pembayaran') ?>">
                         <div class="btn btn-sm btn-success ">Pembayaran</div> 
                     </a>
                 </div>
 
 </div>
+<?php endif; ?>

@@ -24,6 +24,29 @@
         </a>
         </div>
 
+        <?php
+        $kategoriToko = array(
+            array('Elektronik', 'kategori/elektronik', 'fa-laptop'),
+            array('Pakaian Pria', 'kategori/pakaian_pria', 'fa-tshirt'),
+            array('Pakaian Wanita', 'kategori/pakaian_wanita', 'fa-female'),
+            array('Pakaian Anak', 'kategori/pakaian_anak', 'fa-child'),
+            array('Peralatan Olahraga', 'kategori/peralatan_olahraga', 'fa-futbol')
+        );
+        ?>
+        <section class="mt-4 mb-4" aria-labelledby="category-heading">
+            <h2 id="category-heading" class="h5 font-weight-bold text-gray-800 mb-3">KATEGORI</h2>
+            <div class="row">
+                <?php foreach ($kategoriToko as $kategori): ?>
+                    <div class="col-6 col-md-4 col-lg mb-3">
+                        <a class="category-tile" href="<?php echo site_url($kategori[1]); ?>">
+                            <span class="category-icon"><i class="fas <?php echo $kategori[2]; ?>" aria-hidden="true"></i></span>
+                            <span class="font-weight-bold small"><?php echo html_escape($kategori[0]); ?></span>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
     <div class="row text-center mt-3 ">
         
         <?php foreach ($barang as $brg) : ?>

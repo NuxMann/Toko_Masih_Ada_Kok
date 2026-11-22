@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Database: `db_toko_online`
 --
 
+CREATE DATABASE IF NOT EXISTS `db_toko_online` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `db_toko_online`;
+
 -- --------------------------------------------------------
 
 --
@@ -34,8 +37,10 @@ CREATE TABLE `tb_barang` (
   `kategori` varchar(400) NOT NULL,
   `harga` int(20) NOT NULL,
   `stok` int(4) NOT NULL,
-  `gambar` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `gambar` text NOT NULL,
+  UNIQUE KEY `uq_tb_barang_nama_brg` (`nama_brg`(191)),
+  KEY `idx_tb_barang_kategori` (`kategori`(100))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tb_barang`
