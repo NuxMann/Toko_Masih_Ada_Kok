@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Midtrans%20Gateway-Belum%20Aktif-F59E0B?style=for-the-badge" alt="Midtrans Belum Aktif" />
 </p>
 
-Aplikasi web **Toko Online / Toko Kelontong** berbasis **CodeIgniter 3** dan **MySQL** untuk menampilkan daftar produk per kategori, halaman detail produk, pengelolaan keranjang belanja, serta alur checkout/pembayaran di lingkungan lokal.
+Aplikasi web **Toko Online / Toko Kelontong** berbasis **CodeIgniter 3** dan **MySQL** untuk menampilkan daftar produk per kategori, halaman detail produk, pengelolaan keranjang belanja, serta alur checkout/pembayaran di lingkungan pengembangan lokal[cite: 1, 3, 9].
 
 > **Catatan Status Pembayaran:** Integrasi **Midtrans Payment Gateway asli belum diaktifkan/dihubungkan** pada proyek ini (alur pembayaran masih berjalan sebagai alur/simulasi lokal dan memerlukan konfigurasi *Server Key*, *Client Key*, serta endpoint callback Midtrans sebelum dipakai secara penuh).
 
@@ -25,3 +25,25 @@ flowchart LR
     B -->|Query / CRUD| C[("🗄️ MySQL<br/>db_toko_online")]
     B -->|Load Assets| D["🖼️ Folder uploads/ & img/"]
     B -.->|Belum Terhubung| E["💳 Midtrans Gateway<br/>(Belum Diaktifkan)"]
+
+sequenceDiagram
+    actor User as 👤 Pengguna
+    participant Web as 🖥️ Toko Masih Ada Kok (CI3)
+    participant DB as 🗄️ MySQL
+
+    User->>Web: Buka Dashboard & Pilih Kategori
+    Web->>DB: Ambil data kategori & produk
+    DB-->>Web: Kirim data produk + nama file gambar
+    Web-->>User: Tampilkan grid kategori & card produk
+    User->>Web: Buka Detail -> Tambah ke Keranjang
+    Web-->>User: Perbarui jumlah item & subtotal keranjang
+    User->>Web: Klik Pembayaran / Checkout
+    Web-->>User: Tampilkan halaman pembayaran lokal (Midtrans asli belum aktif)
+
+git clone [https://github.com/NuxMann/Toko_Masih_Ada_Kok.git](https://github.com/NuxMann/Toko_Masih_Ada_Kok.git)
+cd Toko_Masih_Ada_Kok
+
+flowchart TD
+    S1["1. Jalankan MySQL di Laragon<br/>(Port 3306)"] --> S2["2. Import Database_MySQL/db_toko_online.sql<br/>via phpMyAdmin atau MySQL CLI"]
+    S2 --> S3["3. Atur Koneksi di<br/>application/config/database.php"]
+    S3 --> S4["4. Verifikasi Data Dummy &<br/>Gambar di Folder uploads/"]
